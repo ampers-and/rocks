@@ -3,6 +3,8 @@ import { getHashParams } from "../utils/getHashParams";
 // import RecentlyPlayed from "./RecentlyPlayed";
 // import { ErrorMessage } from "./ErrorMessage";
 
+import UserCard from "./UserCard";
+
 function UserProfile() {
   const [user, setUser] = useState(null);
   const [accessToken, setAccessToken] = useState(null);
@@ -42,6 +44,7 @@ function UserProfile() {
     handleRequest(access_token, refresh_token, error);
   }, []);
 
+  console.log(user);
   if (error) {
     // return <ErrorMessage />;
     return <p />;
@@ -64,6 +67,7 @@ function UserProfile() {
         accessToken={accessToken}
         refreshToken={refreshToken}
       /> */}
+      {/* {user && <UserCard user={user} />} */}
     </div>
   );
 }
