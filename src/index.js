@@ -5,9 +5,15 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import { BrowserRouter as Router, withRouter } from "react-router-dom";
+
+const AppWithRouter = withRouter(App);
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <AppWithRouter />
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );
